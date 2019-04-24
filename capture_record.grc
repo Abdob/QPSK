@@ -89,7 +89,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>1200000000</value>
+      <value>75.25e6</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -152,7 +152,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>30</value>
+      <value>25</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -258,7 +258,7 @@
     </param>
     <param>
       <key>file</key>
-      <value>C:\Users\Shajoon\Documents\SDR\Ryan\capture_record.dat</value>
+      <value>C:\Users\Shajoon\Documents\SDR\Ryan\QPSK\capture_record_rx25_423.dat</value>
     </param>
     <param>
       <key>_coordinate</key>
