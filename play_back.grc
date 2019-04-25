@@ -89,7 +89,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>1200000000</value>
+      <value>75250000</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -168,7 +168,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>5000000</value>
+      <value>6144000</value>
     </param>
   </block>
   <block>
@@ -191,7 +191,7 @@
     </param>
     <param>
       <key>file</key>
-      <value>C:\Users\Shajoon\Documents\SDR\Ryan\capture_record.dat</value>
+      <value>/home/abdo/QpskProject/QPSK/capture_record_rx45_424.dat</value>
     </param>
     <param>
       <key>_coordinate</key>
