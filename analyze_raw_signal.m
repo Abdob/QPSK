@@ -1,6 +1,6 @@
 %% load raw qpsk
  f = fopen('capture_record_rx30_425.dat', 'rb');
- D = fread(f, inf, '*float'); 
+ D = fread(f, 16e6, '*float'); 
  fclose(f);
  plot(D);
 %% small portion "burst"
@@ -24,31 +24,25 @@ Nsym = R*t;     % number of symbols
 %% analysis of a dozen modulated symbols
 Nsamps = 12*fs/R;
 b = c(100:100+Nsamps);
-OS = fs/R;  % oversampling
+
 
 %% frequency analysis
 figure(1)
+f = [-fs/2:fs/N:fs/2-fs/N]/1e6;
 freq = abs(fftshift(fft(c)));
-figure(2)
-freq = abs(fft(c));
-plot(freq)
+plot(f,freq);
 time = [1:T:T*N];
 
-%%
+%% frequency analysis after filtering
 Nsym = 6;           % Filter span in symbol durations
 beta = 0.5;         % Roll-off factor
-sampsPerSym = 16;    % Upsampling factor
-% Design and normalize filter.
-sqrtRcosRxFlt = comm.RaisedCosineReceiveFilter(...
-  'Shape',                  'normal', ...
-  'RolloffFactor',          beta, ...
-  'FilterSpanInSymbols',    Nsym, ...
-  'InputSamplesPerSymbol',  sampsPerSym, ...
-  'DecimationFactor',       1);
+OS = fs/R;  % oversampling
+B = rcosdesign(beta,  Nsym, OS);
+r = filter(B, 1, c);
+freq = abs(fftshift(fft(r)));
+plot(f,freq);
 
-
-% Visualize the impulse response
-fvtool(rcosFlt, 'Analysis', 'impulse')
+%% Visualize waveform
 
 
 
