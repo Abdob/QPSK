@@ -8,5 +8,4 @@ The immediate milestone will be to transmit and receive the text message using t
 
 # Simulation 1
 ![GitHub Logo](/BlockDiagrams/Simulation1.jpg)
-Format: ![Alt Text](url)
 
