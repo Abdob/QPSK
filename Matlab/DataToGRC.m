@@ -9,7 +9,7 @@ function [] = DataToGRC(filename, data, type)
     
     filename = strcat('../GRC/', filename, '.dat');
     f = fopen (filename, 'wb'); 
-    v = fwrite (f, data , 'float'); %specify float 
+    v = fwrite (f, data , 'unsigned char'); %specify float 
     fclose (f);
 end
     
