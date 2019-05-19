@@ -1,4 +1,13 @@
-function [v] = DataFromGRC(filename,len,type)
+function [v] = DataFromGRC(filename,type ,len)
+    % Reading from an GNU Radio generated data file
+    % function [v] = DataFromGRC(filename,type ,len)
+    % file name: example.dat will be 'example'
+    % type is 'uint8', 'float' or 'complex'
+
+    if nargin<3
+      len = inf;
+    end
+    
     filename = strcat('../GRC/',filename,'.dat');
     f = fopen(filename, 'rb');
     switch(type)
