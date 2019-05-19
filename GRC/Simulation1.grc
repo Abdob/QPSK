@@ -132,7 +132,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(408, 268)</value>
+      <value>(304, 172)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -183,7 +183,7 @@
     </param>
     <param>
       <key>file</key>
-      <value>/home/foci/Documents/SDR/QPSK/GRC/receivedGRC.dat</value>
+      <value>/home/foci/Documents/SDR/QPSK/GRC/received.dat</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -230,7 +230,7 @@
     </param>
     <param>
       <key>file</key>
-      <value>/home/foci/Documents/SDR/QPSK/Matlab/mlVector.dat</value>
+      <value>/home/foci/Documents/SDR/QPSK/GRC/message.dat</value>
     </param>
     <param>
       <key>_coordinate</key>
