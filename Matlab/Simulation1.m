@@ -2,7 +2,7 @@
 readID = fopen('message.txt');
 txtScan = textscan(readID,'%760c');
 tA = txtScan{1};
-DataToGRC('message', tA);   % send this to GRC
+DataToGRC('message', tA,'uint8');   % send this to GRC
 
 %% Convert to Binary
 tBits = dec2bin(tA,8)';           

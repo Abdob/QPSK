@@ -1,7 +1,12 @@
-function [] = DataToGRC(filename, data)
+function [] = DataToGRC(filename, data, type)
     % Writing a data file so it can be read from Gnu Radio
-    data = single(data);  % needs to be single precision
-
+    switch(type)
+        case 'uint8'
+            data = uint8(data);
+        case 'single'
+            data = single(data);
+    end
+    
     filename = strcat('../GRC/', filename, '.dat');
     f = fopen (filename, 'wb'); 
     v = fwrite (f, data , 'float'); %specify float 
