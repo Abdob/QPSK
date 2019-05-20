@@ -16,16 +16,21 @@ tSyms = tSyms(1:2:end) + j*tSyms(2:2:end);  % complex symbols
 tdSyms = zeros(size(tSyms));
 tdSyms(1) = tSyms(1);
 for i=2:length(tSyms)
-    tdSyms(i) = tdSyms(i-1)*exp(-j*angle(tSyms(i)))*exp(-j*pi*3/4);
+    tdSyms(i) = tdSyms(i-1)*exp(-j*(pi*3/4+angle(tSyms(i))));
 end
  
 %% Differential Decoding
 rdSyms = [0;tdSyms].*conj([tdSyms;0]);                   % phase difference
 rdSyms = rdSyms(1:end-1)*exp(-j*pi*3/4)/sqrt(2);         % phase rotation  
     
+rdSyms = tdSyms*exp(j*pi*3/4)/sqrt(2);       % phase rotation
+for i=1:length(rdSyms)
+    
+end
+
 %% QPSK Decoding
-rSyms(1:2:numel(tSyms)*2) = real(rdSyms);
-rSyms(2:2:numel(tSyms)*2) = imag(rdSyms);
+rSyms(1:2:numel(tSyms)*2) = real(tSyms);
+rSyms(2:2:numel(tSyms)*2) = imag(tSyms);
 
 %% Convert from Binary
 rBits = char(rSyms/2+48.5);

@@ -17,7 +17,5 @@ function [v] = DataFromGRC(filename,type ,len)
             r = fread(f,len,'float');
             v = r(1:2:end) + j*r(2:2:end);
     end
-    
-    v = v';
     fclose(f);
 end

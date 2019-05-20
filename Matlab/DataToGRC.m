@@ -1,5 +1,6 @@
 function [] = DataToGRC(filename, data, type)
     % Writing a data file so it can be read from Gnu Radio
+    % function [] = DataToGRC(filename, data, type)
     filename = strcat('../GRC/', filename, '.dat');
     f = fopen (filename, 'wb'); 
     switch(type)
