@@ -5,12 +5,16 @@ tA = txtScan{1};
 DataToGRC('message', tA,'uint8');   % send this to GRC as unsigned char
 
 %% Convert to Binary
-tBits = dec2bin(tA,8)';           
-tBits = reshape(tBits,numel(tBits),1);
+tBits = dec2bin(tA,8)';                             % unpacking 
+tBits = reshape(tBits,numel(tBits),1) - 48;         % k bits
+%ichar = DataFromGRC('ichar', 'uint8');
+%VerifyData(ichar, tBits);
 
 %% QPSK Encoding
-tSyms = (tBits-48.5)*2;                     % Symbols interleaved
-tSyms = tSyms(1:2:end) + j*tSyms(2:2:end);  % complex symbols
+tSyms = tBits(1:2:end) + j*tBits(2:2:end);          % iChar to Complex
+tSyms = (tSyms-.5 -.5i)*2;                          % QPSK symbols
+% complexSyms = DataFromGRC('complex','complex');
+% VerifyData(tSyms, complexSyms);
 
 %% Differntial Encoding
 tdSyms = zeros(size(tSyms));
@@ -33,5 +37,7 @@ rBits = reshape(rBits,8,numel(tBits)/8);
 
 %% Write Back Text Message
 rA = char(bin2dec(rBits')');
+
+
 writeID = fopen('received.txt','w');
 fprintf(writeID, rA);
