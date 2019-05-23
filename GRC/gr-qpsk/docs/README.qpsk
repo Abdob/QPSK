@@ -13,6 +13,12 @@ make
 sudo make install
 sudo ldconfig
 
-# lastly when you are running the grc flowchart
-# make sure the source and active sink files
-# are set to specific system.
+# when you are running the grc flowchart
+# make sure the source and any active sink
+# files are set to specific system.
+
+# after building and installing clean
+# build directory
+
+cd ..
+sudo rm -r build/*
