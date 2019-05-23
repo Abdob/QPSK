@@ -22,3 +22,5 @@ sudo ldconfig
 
 cd ..
 sudo rm -r build/*
+
+# reload grc and give it a shot!
