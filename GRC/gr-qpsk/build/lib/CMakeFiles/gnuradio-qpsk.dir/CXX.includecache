@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/qpsk/api.h
+gnuradio/attributes.h
+-
+
+../include/qpsk/diff_encoder.h
+qpsk/api.h
+-
+gnuradio/block.h
+-
+
+/home/foci2/Documents/SDR/QPSK/GRC/gr-qpsk/lib/diff_encoder_impl.cc
+config.h
+/home/foci2/Documents/SDR/QPSK/GRC/gr-qpsk/lib/config.h
+gnuradio/io_signature.h
+-
+diff_encoder_impl.h
+/home/foci2/Documents/SDR/QPSK/GRC/gr-qpsk/lib/diff_encoder_impl.h
+stdio.h
+-
+math.h
+-
+
+/home/foci2/Documents/SDR/QPSK/GRC/gr-qpsk/lib/diff_encoder_impl.h
+qpsk/diff_encoder.h
+-
+
