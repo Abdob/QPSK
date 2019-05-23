@@ -5,6 +5,7 @@ sudo apt-get install swig
 sudo apt-get install cmake
 
 # cd into the build directory and type these build commands
+cd GRC/gr-qpsk/build
 cmake ../
 make
 
