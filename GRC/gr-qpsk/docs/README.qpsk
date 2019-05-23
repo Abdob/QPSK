@@ -9,6 +9,10 @@ cd GRC/gr-qpsk/build
 cmake ../
 make
 
-#finally install the newly built modules
+#install the newly built modules
 sudo make install
 sudo ldconfig
+
+# lastly when you are running the grc flowchart
+# make sure the source and active sink files
+# are set to specific system.
