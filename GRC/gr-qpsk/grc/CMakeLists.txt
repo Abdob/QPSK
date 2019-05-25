@@ -18,5 +18,6 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    qpsk_diff_encoder.xml DESTINATION share/gnuradio/grc/blocks
+    qpsk_diff_encoder.xml
+    qpsk_symbol_decision.xml DESTINATION share/gnuradio/grc/blocks
 )

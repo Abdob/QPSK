@@ -26,7 +26,8 @@ end
 %% Differential Decoding
 rdSyms = [0;tdSyms].*conj([tdSyms;0]);                   % phase difference
 rdSyms = rdSyms(1:end-1)*exp(-j*pi*3/4)/sqrt(2);         % phase rotation  
-    
+rdSyms = symbolDecision(rdSyms);
+
 %% QPSK Decoding
 rSyms(1:2:numel(tSyms)*2) = real(rdSyms);
 rSyms(2:2:numel(tSyms)*2) = imag(rdSyms);

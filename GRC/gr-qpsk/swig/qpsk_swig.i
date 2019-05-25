@@ -9,8 +9,11 @@
 
 %{
 #include "qpsk/diff_encoder.h"
+#include "qpsk/symbol_decision.h"
 %}
 
 
 %include "qpsk/diff_encoder.h"
 GR_SWIG_BLOCK_MAGIC2(qpsk, diff_encoder);
+%include "qpsk/symbol_decision.h"
+GR_SWIG_BLOCK_MAGIC2(qpsk, symbol_decision);

@@ -27,12 +27,14 @@
 
 #include "qa_qpsk.h"
 #include "qa_diff_encoder.h"
+#include "qa_symbol_decision.h"
 
 CppUnit::TestSuite *
 qa_qpsk::suite()
 {
   CppUnit::TestSuite *s = new CppUnit::TestSuite("qpsk");
   s->addTest(gr::qpsk::qa_diff_encoder::suite());
+  s->addTest(gr::qpsk::qa_symbol_decision::suite());
 
   return s;
 }

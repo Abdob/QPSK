@@ -22,5 +22,6 @@
 ########################################################################
 install(FILES
     api.h
-    diff_encoder.h DESTINATION include/qpsk
+    diff_encoder.h
+    symbol_decision.h DESTINATION include/qpsk
 )
