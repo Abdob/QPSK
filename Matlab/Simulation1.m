@@ -26,7 +26,7 @@ end
 %% Pulse Shaper
 tUpSyms = upsample(tdSyms, 32);
 beta = 0.5; span = 9; sps = 32;
-B = rcosdesign(beta, span, sps); B = B/max(B);          % normalize
+B = rcosdesign(beta, span, sps);
 tx = filter(B, 1, tUpSyms);
  
 %%  Transmitter Portion
