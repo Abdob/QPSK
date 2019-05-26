@@ -552,7 +552,7 @@
     </param>
     <param>
       <key>file</key>
-      <value>/home/foci2/Documents/SDR/QPSK/GRC/message.dat</value>
+      <value>/home/foci1/Documents/SDR/qpsk/GRC/message.dat</value>
     </param>
     <param>
       <key>_coordinate</key>
