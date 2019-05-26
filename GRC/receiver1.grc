@@ -89,7 +89,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>75.25e6</value>
+      <value>880e6</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -231,7 +231,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>6144000</value>
+      <value>1024000*32</value>
     </param>
   </block>
   <block>
@@ -254,15 +254,15 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>file</key>
-      <value>C:\Users\Jevin\Documents\SDR\QPSK\capture_record_427.dat</value>
+      <value>C:\Users\Jevin\Documents\SDR\QPSK\525tx1.dat</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(520, 252)</value>
+      <value>(448, 156)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -353,7 +353,7 @@
     </param>
     <param>
       <key>serial</key>
-      <value>1D3A0BCA40CE99</value>
+      <value>1D4258AE5AC357</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -365,7 +365,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(128, 360)</value>
+      <value>(56, 264)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -444,7 +444,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(520, 420)</value>
+      <value>(448, 324)</value>
     </param>
     <param>
       <key>gui_hint</key>
