@@ -63,6 +63,6 @@ rBits = [zeros(1,6), rBits(1:end-6)];                      % delay and align
 rBits = reshape(rBits,8,numel(rBits)/8);
 
 %% Write Back Text Message
-rA = char(bin2dec(rBits')')
+rA = char(bin2dec(rBits')');
 writeID = fopen('received.txt','w');
 fprintf(writeID, rA);
