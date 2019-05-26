@@ -24,9 +24,10 @@ for i=2:length(tSyms)
 end
 
 %% Pulse Shaper
-tUpSyms = upsample(tdSyms, 32);
-beta = 0.5; span = 9; sps = 32;
-B = rcosdesign(beta, span, sps);
+OS = 8;
+tUpSyms = upsample(tdSyms, OS);
+beta = 0.5; span = 9;
+B = rcosdesign(beta, span, OS);
 tx = filter(B, 1, tUpSyms);
  
 %%  Transmitter Portion
@@ -45,7 +46,7 @@ rx = tx;
 
 %% Match filtering
 rUpSyms = filter(B, 1, rx);
-rdSyms = rUpSyms(1:32:end);                               % Down sample before
+rdSyms = rUpSyms(1:OS:end);                               % Down sample before
                                                        % differential decoding
 %% Differential Decoding
 rdSyms = [0;rdSyms].*conj([rdSyms;0]);                 % phase difference
