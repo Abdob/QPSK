@@ -24,9 +24,10 @@ for i=2:length(tSyms)
 end
 
 %% Pulse Shaper
-tUpSyms = upsample(tdSyms, 32);
-beta = 0.5; span = 9; sps = 32;
-B = rcosdesign(beta, span, sps); B = B/max(B);          % normalize
+OS = 8;
+tUpSyms = upsample(tdSyms, OS);
+beta = 0.5; span = 9;
+B = rcosdesign(beta, span, OS);
 tx = filter(B, 1, tUpSyms);
  
 %%  Transmitter Portion
@@ -45,7 +46,7 @@ rx = tx;
 
 %% Match filtering
 rUpSyms = filter(B, 1, rx);
-rdSyms = rUpSyms(1:32:end);                               % Down sample before
+rdSyms = rUpSyms(1:OS:end);                               % Down sample before
                                                        % differential decoding
 %% Differential Decoding
 rdSyms = [0;rdSyms].*conj([rdSyms;0]);                 % phase difference
@@ -57,11 +58,13 @@ rSyms(1:2:numel(rdSyms)*2) = real(rdSyms);
 rSyms(2:2:numel(rdSyms)*2) = imag(rdSyms);
 
 %% Convert from Binary
+delay = 6;
 rBits = char(rSyms/2+48.5);
-rBits = [zeros(1,6), rBits(1:end-6)];                      % delay and align
+rBits = rBits(1:floor(length(rBits)/8)*8);                          % truncate to make divisible by 8
+rBits = [zeros(1,delay), rBits(1:end-delay)];                      % delay and align
 rBits = reshape(rBits,8,numel(rBits)/8);
 
 %% Write Back Text Message
-rA = char(bin2dec(rBits')')
+rA = char(bin2dec(rBits')');
 writeID = fopen('received.txt','w');
 fprintf(writeID, rA);
