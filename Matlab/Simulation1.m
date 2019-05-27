@@ -58,9 +58,10 @@ rSyms(1:2:numel(rdSyms)*2) = real(rdSyms);
 rSyms(2:2:numel(rdSyms)*2) = imag(rdSyms);
 
 %% Convert from Binary
+delay = 6;
 rBits = char(rSyms/2+48.5);
-rBits = rBits(1:floor(length(rBits)/8)*8);                 % truncate to make divisible by 8
-rBits = [zeros(1,6), rBits(1:end-6)];                      % delay and align
+rBits = rBits(1:floor(length(rBits)/8)*8);                          % truncate to make divisible by 8
+rBits = [zeros(1,delay), rBits(1:end-delay)];                      % delay and align
 rBits = reshape(rBits,8,numel(rBits)/8);
 
 %% Write Back Text Message
