@@ -19,5 +19,6 @@
 
 install(FILES
     qpsk_diff_encoder.xml
-    qpsk_symbol_decision.xml DESTINATION share/gnuradio/grc/blocks
+    qpsk_symbol_decision.xml
+    qpsk_de_randomizer.xml DESTINATION share/gnuradio/grc/blocks
 )

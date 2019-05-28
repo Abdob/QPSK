@@ -28,6 +28,7 @@ link_directories(${Boost_LIBRARY_DIRS})
 list(APPEND qpsk_sources
     diff_encoder_impl.cc
     symbol_decision_impl.cc
+    de_randomizer_impl.cc
 )
 
 set(qpsk_sources "${qpsk_sources}" PARENT_SCOPE)
@@ -62,6 +63,7 @@ include_directories(${CPPUNIT_INCLUDE_DIRS})
 list(APPEND test_qpsk_sources
     ${CMAKE_CURRENT_SOURCE_DIR}/test_qpsk.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/qa_qpsk.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/qa_de_randomizer.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/qa_symbol_decision.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/qa_diff_encoder.cc
 )

@@ -7,15 +7,15 @@ DataToGRC('message', tA,'uint8');   % send this to GRC as unsigned char
 %% Convert to Binary
 tBits = dec2bin(tA,8)';                             % unpacking 
 tBits = reshape(tBits,numel(tBits),1) - 48;         % k bits
-%ichar = DataFromGRC('ichar', 'uint8');
-%VerifyData(ichar, tBits);
+ichar = DataFromGRC('ichar', 'uint8');
+%VerifyData(ichar', tBits);
 
 %% Randomize
 pn = zeros(384*2*8,1);                                  % pn sequence generated
 state = [1 0 0 0 0 0 0 0 0 1 0 0 0];
 for i=1:length(pn)
-    pol = state(13) + state(11) + state(10) + state(1);
-    pn(i) = mod(pol,2);
+    pol = state(13) + state(11) + state(10) + state(1); % added and taking
+    pn(i) = mod(pol,2);                                 % mod 2 is xor'ing
     state(1:12) = state(2:13);
     state(13) = pn(i);
     if(i == 384*8)

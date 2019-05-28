@@ -23,5 +23,6 @@
 install(FILES
     api.h
     diff_encoder.h
-    symbol_decision.h DESTINATION include/qpsk
+    symbol_decision.h
+    de_randomizer.h DESTINATION include/qpsk
 )
