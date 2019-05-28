@@ -1,6 +1,6 @@
 %% Read Text Message
 readID = fopen('message.txt');
-txtScan = textscan(readID,'%760c');
+txtScan = textscan(readID,'%768c');
 tA = txtScan{1};
 DataToGRC('message', tA,'uint8');   % send this to GRC as unsigned char
 
