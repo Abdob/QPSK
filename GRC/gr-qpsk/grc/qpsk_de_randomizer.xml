@@ -4,13 +4,27 @@
   <key>qpsk_de_randomizer</key>
   <category>[qpsk]</category>
   <import>import qpsk</import>
-  <make>qpsk.de_randomizer()</make>
+  <make>qpsk.de_randomizer($randn)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name
        * key (makes the value accessible as $keyname, e.g. in the make node)
        * type -->
+  <param>
+    <name>Randomize</name>
+    <key>randn</key>
+    <value>True</value>
+    <type>bool</type>
+    <option>
+      <name>Randomize</name>
+      <key>True</key>
+    </option>
+    <option>
+      <name>Derandomize</name>
+      <key>False</key>
+    </option>
 
+  </param>
   <!-- Make one 'sink' node per input. Sub-nodes:
        * name (an identifier for the GUI)
        * type

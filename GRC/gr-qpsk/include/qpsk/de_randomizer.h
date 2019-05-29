@@ -46,7 +46,7 @@ namespace gr {
        * class. qpsk::de_randomizer::make is the public interface for
        * creating new instances.
        */
-      static sptr make();
+      static sptr make(bool randn);
     };
 
   } // namespace qpsk

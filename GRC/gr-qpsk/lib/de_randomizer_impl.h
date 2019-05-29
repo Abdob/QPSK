@@ -28,9 +28,13 @@ namespace gr {
 
     class de_randomizer_impl : public de_randomizer
     {
-
+     private:
+	unsigned int counter;
+      	bool d_randn;
+	unsigned char *pBuf;
+	unsigned char active;
      public:
-      de_randomizer_impl();
+      de_randomizer_impl(bool randn);
       ~de_randomizer_impl();
 
       // Where all the action really happens
@@ -40,8 +44,7 @@ namespace gr {
            gr_vector_int &ninput_items,
            gr_vector_const_void_star &input_items,
            gr_vector_void_star &output_items);
-     protected:
-	int counter;
+
     };
 
   } // namespace qpsk
