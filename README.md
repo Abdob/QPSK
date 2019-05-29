@@ -10,7 +10,8 @@ The immediate milestone will be to transmit and receive the text message using t
 ![GitHub Logo](/Diagrams/Simulation1.jpg)
 
 # Simulation 2
-Bit randomization, derandomization and symbol timing recovery are added to the Simulation 2. The symbol timing recovery is done together with the match filter using an 8-bank polyphase filter to which one filter bank is selected to retrieve the optimal symbol. Carrier Frequency offsets of +/- 0.01 MHz can also be simulated here as differential encoding and polyphase timing recovery are robust against carrier frequency offsets. 
+Bit randomization, derandomization and symbol timing recovery are added to the Simulation 2. The symbol timing recovery is done together with the match filter using an 8-bank polyphase filter to which one filter bank is selected to retrieve the optimal symbol. Carrier Frequency offsets of +/- 0.01 MHz can also be simulated here as differential encoding and polyphase timing recovery are robust against carrier frequency offsets.
+
 ![GitHub Logo](/Diagrams/Simulation2.jpg)
 
 # Receiver Gain Settings
