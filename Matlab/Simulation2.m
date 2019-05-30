@@ -1,28 +1,32 @@
 % Read Text Message
 readID = fopen('message.txt');
-txtScan = textscan(readID,'%768c');
+txtScan = textscan(readID,'%2304c');
 tA = txtScan{1};
 DataToGRC('message', tA,'uint8');   % send this to GRC as unsigned char
 
 % Convert to Binary
 tBits = dec2bin(tA,8)';                             % unpacking 
 tBits = reshape(tBits,numel(tBits),1) - 48;         % k bits
-ichar = DataFromGRC('ichar', 'uint8');
+%ichar = DataFromGRC('ichar', 'uint8');
 %VerifyData(ichar', tBits);
 
 %% Randomize
-pn = zeros(384*2*8,1);                                  % pn sequence generated
+pn = zeros(384*8,1);                                  % pn sequence generated
 state = [1 0 0 0 0 0 0 0 0 1 0 0 0];
 for i=1:length(pn)
     pol = state(13) + state(11) + state(10) + state(1); % added and taking
     pn(i) = mod(pol,2);                                 % mod 2 is xor'ing
     state(1:12) = state(2:13);
-    state(13) = pn(i);
-    if(i == 384*8)
-        state = [1 0 0 0 0 0 0 0 0 1 0 0 0];    % reset after two frames
-    end
+    state(13) = pn(i);  
 end
-tBits = bitxor(tBits,pn);                       % The actual randomization          
+
+for i=1:length(tBits)
+    ind = mod(i,3072);
+    if(ind==0)
+        ind =3072;
+    end
+    tBits(i) = bitxor(tBits(i),pn(ind));                       % The actual randomization      
+end    
 %%
 
 % QPSK Encoding
@@ -76,8 +80,17 @@ rBits = rSyms/2+0.5;
 %% Derandomize
 delay = 18;                                     % Delay is now with respect to bits because
 rBits = [rBits(delay+1:end);zeros(delay,1)];    % alignment must be before derandomizing 
-rBits = bitxor(rBits,pn);
+
+for i = 1:length(rBits)
+    ind = mod(i,3072);
+    if(ind==0)
+        ind =3072;
+    end
+    rBits(i) = bitxor(rBits(i),pn(ind));
+end
+
 %%
+   
 
 % Convert from Binary
 delay = 0;
