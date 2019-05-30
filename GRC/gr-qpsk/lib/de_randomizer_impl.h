@@ -32,7 +32,9 @@ namespace gr {
 	unsigned int counter;
       	bool d_randn;
 	unsigned char *pBuf;
+	unsigned char *tBuf;
 	unsigned char active;
+	unsigned int samp;
      public:
       de_randomizer_impl(bool randn);
       ~de_randomizer_impl();

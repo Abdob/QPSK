@@ -51,11 +51,13 @@ namespace gr {
     {
 	counter = 0;
 	d_randn = randn;
-	pBuf = (unsigned char*) malloc(8*sizeof(unsigned char));
-	
-	for(int i =0; i<8;i++){
-	    pBuf[i] = 0;
+	pBuf = (unsigned char*) malloc(32*sizeof(unsigned char));
+	tBuf = (unsigned char*) malloc(32*sizeof(unsigned char));	
+	for(int i =0; i<32;i++){
+	    tBuf[i] = 0;
+		pBuf[i] = 0;
 	}
+	samp = 0;
 	active = 0;
     }
 
@@ -95,27 +97,40 @@ namespace gr {
 	    }
 	}
 	else{	
-            for(int i = 0; i < noutput_items; i++)
-	    {	
-		unsigned char val = 0;
-		for(int j=0; j < 7; j++){
-		    pBuf[j] = pBuf[j+1];
-		    val = val + pBuf[j]*pow(2,(7-j));
-		}
-		pBuf[7] = in[i];
-		val = val + pBuf[7]*pow(2,0);
-		if((val == 71) & (counter ==0)){
-		    counter = 0;
-		    active = 1;
-		}
-		out[i] = pBuf[0];
-		if(active){
-         	    out[i] = pBuf[0] ^ prdm[counter];
-		    counter++;
-		}
-	if(counter == 3072){
-		counter = 0;
-	}
+         for(int i = 0; i < noutput_items; i++)
+		{	
+			unsigned char val = 0;
+			if(samp > 7){
+				samp = 0;
+			}
+			
+			pBuf[samp] = in[i];
+			
+			// Implementing circular buffer
+			for(int j = 0; j < 8; j++)
+			{
+				int isamp = (samp+8-j) % 8;
+				val = val + pBuf[isamp]*pow(2,j);
+			}
+				
+			int isamp7 = (samp + 8 - 7 ) % 8 ;
+
+		
+		
+			if((val == 71) & (counter ==0)){	 //IS SYNC BYTE ?
+				counter = 0;
+				active = 1;
+			}
+			out[i] = pBuf[isamp7];
+			if(active){
+					out[i] = pBuf[isamp7] ^ prdm[counter];
+				counter++;
+			}
+			if(counter == 3072){
+				counter = 0;
+				active = 0;
+			}
+			samp++;
 	    }
 	}
       // Tell runtime system how many input items we consumed on

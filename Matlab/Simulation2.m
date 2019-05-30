@@ -33,7 +33,7 @@ end
 tSyms = tBits(1:2:end) + j*tBits(2:2:end);          % iChar to Complex
 tSyms = (tSyms-.5 -.5i)*2;                          % QPSK symbols
 % complexSyms = DataFromGRC('complex','complex');
-% VerifyData(tSyms, complexSyms);
+% VerifyData(tSyms, complexSMyms);
 
 % Differntial Encoding
 tdSyms = zeros(size(tSyms));
