@@ -32,7 +32,7 @@ namespace gr {
 	unsigned int counter;
       	bool d_randn;
 	unsigned char *pBuf;
-	unsigned char *tBuf;
+	unsigned char *dBuf;
 	unsigned char active;
 	unsigned int samp;
      public:

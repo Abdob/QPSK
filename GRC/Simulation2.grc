@@ -316,7 +316,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(368, 636)</value>
+      <value>(632, 116)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -371,7 +371,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(576, 228)</value>
+      <value>(584, 220)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -477,11 +477,11 @@
     </param>
     <param>
       <key>file</key>
-      <value>/home/foci2/Documents/SDR/QPSK/GRC/match.dat</value>
+      <value>/home/foci2/Documents/SDR/QPSK/GRC/ichar.dat</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(496, 724)</value>
+      <value>(600, 692)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -799,61 +799,6 @@
     </param>
   </block>
   <block>
-    <key>blocks_throttle</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(256, 116)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_throttle_0</value>
-    </param>
-    <param>
-      <key>ignoretag</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>samples_per_second</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>byte</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
     <key>blocks_unpack_k_bits_bb</key>
     <param>
       <key>alias</key>
@@ -873,7 +818,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(424, 116)</value>
+      <value>(280, 116)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1081,7 +1026,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(568, 120)</value>
+      <value>(432, 116)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1124,7 +1069,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(472, 636)</value>
+      <value>(448, 636)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1590,7 +1535,7 @@
   </connection>
   <connection>
     <source_block_id>blocks_complex_to_interleaved_char_0</source_block_id>
-    <sink_block_id>blocks_delay_0</sink_block_id>
+    <sink_block_id>qpsk_de_randomizer_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -1602,13 +1547,7 @@
   </connection>
   <connection>
     <source_block_id>blocks_delay_0</source_block_id>
-    <sink_block_id>blocks_file_sink_0_0_0_0_1_0_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_delay_0</source_block_id>
-    <sink_block_id>qpsk_de_randomizer_1</sink_block_id>
+    <sink_block_id>blocks_interleaved_char_to_complex_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -1620,7 +1559,7 @@
   </connection>
   <connection>
     <source_block_id>blocks_file_source_0</source_block_id>
-    <sink_block_id>blocks_throttle_0</sink_block_id>
+    <sink_block_id>blocks_unpack_k_bits_bb_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -1661,12 +1600,6 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_throttle_0</source_block_id>
-    <sink_block_id>blocks_unpack_k_bits_bb_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
     <source_block_id>blocks_unpack_k_bits_bb_0</source_block_id>
     <sink_block_id>qpsk_de_randomizer_0</sink_block_id>
     <source_key>0</source_key>
@@ -1692,7 +1625,13 @@
   </connection>
   <connection>
     <source_block_id>qpsk_de_randomizer_0</source_block_id>
-    <sink_block_id>blocks_interleaved_char_to_complex_0</sink_block_id>
+    <sink_block_id>blocks_delay_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>qpsk_de_randomizer_1</source_block_id>
+    <sink_block_id>blocks_file_sink_0_0_0_0_1_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

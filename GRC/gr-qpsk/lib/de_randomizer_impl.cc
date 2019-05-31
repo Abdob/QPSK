@@ -51,11 +51,13 @@ namespace gr {
     {
 	counter = 0;
 	d_randn = randn;
-	pBuf = (unsigned char*) malloc(32*sizeof(unsigned char));
-	tBuf = (unsigned char*) malloc(32*sizeof(unsigned char));	
-	for(int i =0; i<32;i++){
-	    tBuf[i] = 0;
+	pBuf = (unsigned char*) malloc(1544*sizeof(unsigned char));	//packet sync buffer
+	dBuf = (unsigned char*) malloc(8*sizeof(unsigned char));		   // byte sync buffer
+	for(int i =0; i<1544;i++){
 		pBuf[i] = 0;
+	}
+	for(int i =0; i<8;i++){
+		dBuf[i] = 0;
 	}
 	samp = 0;
 	active = 0;
@@ -100,30 +102,35 @@ namespace gr {
          for(int i = 0; i < noutput_items; i++)
 		{	
 			unsigned char val = 0;
-			if(samp > 7){
+			unsigned char val2 = 0;
+			unsigned int byteAlignDelay;
+			
+			// Implementing circular buffer containing 193 bytes
+			if(samp == 1544){
 				samp = 0;
 			}
-			
 			pBuf[samp] = in[i];
 			
-			// Implementing circular buffer
+			// Checking if first byte and last byte are 0x47 and 0x63 sync bytes respectively
 			for(int j = 0; j < 8; j++)
 			{
-				int isamp = (samp+8-j) % 8;
+				int isamp = (samp+8-j) % 1544;
 				val = val + pBuf[isamp]*pow(2,j);
+				int isamp2 = (samp+1544-j) % 1544;
+				val2 = val2 + pBuf[isamp2]*pow(2,j);
 			}
-				
-			int isamp7 = (samp + 8 - 7 ) % 8 ;
+			
+			// First in byte index in buffer
+			int isamp7 = (samp + 8 - 7 ) % 1544 ;
 
-		
-		
-			if((val == 71) & (counter ==0)){	 //IS SYNC BYTE ?
+			if((val == 71) & (val2 ==100) & (counter ==0)){	 //IS SYNC BYTE ?
+				printf(".");
 				counter = 0;
 				active = 1;
 			}
-			out[i] = pBuf[isamp7];
+
 			if(active){
-					out[i] = pBuf[isamp7] ^ prdm[counter];
+				out[i] = pBuf[isamp7] ^ prdm[counter];
 				counter++;
 			}
 			if(counter == 3072){
