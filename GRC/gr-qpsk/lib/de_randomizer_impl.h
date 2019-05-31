@@ -35,6 +35,7 @@ namespace gr {
 	unsigned char *dBuf;
 	unsigned char active;
 	unsigned int samp;
+	unsigned int byteAlignDelay;
      public:
       de_randomizer_impl(bool randn);
       ~de_randomizer_impl();

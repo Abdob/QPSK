@@ -103,7 +103,6 @@ namespace gr {
 		{	
 			unsigned char val = 0;
 			unsigned char val2 = 0;
-			unsigned int byteAlignDelay;
 			
 			// Implementing circular buffer containing 193 bytes
 			if(samp == 1544){
@@ -127,10 +126,16 @@ namespace gr {
 				printf(".");
 				counter = 0;
 				active = 1;
+				byteAlignDelay = 8 - (samp % 8);
 			}
 
 			if(active){
-				out[i] = pBuf[isamp7] ^ prdm[counter];
+				
+				for(int j=0; j<byteAlignDelay;j++){			// align byte
+					dBuf[j] = dBuf[j+1];
+				}
+				dBuf[byteAlignDelay] = pBuf[isamp7] ^ prdm[counter];
+				out[i] = dBuf[0];
 				counter++;
 			}
 			if(counter == 3072){

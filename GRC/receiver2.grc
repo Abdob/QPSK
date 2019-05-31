@@ -132,7 +132,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(104, 396)</value>
+      <value>(480, 348)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -179,7 +179,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(280, 396)</value>
+      <value>(696, 348)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -222,7 +222,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(312, 312)</value>
+      <value>(896, 184)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -269,7 +269,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(872, 380)</value>
+      <value>(656, 436)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -293,11 +293,7 @@
     </param>
   </block>
   <block>
-    <key>blocks_file_sink</key>
-    <param>
-      <key>append</key>
-      <value>False</value>
-    </param>
+    <key>blocks_file_source</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -316,11 +312,11 @@
     </param>
     <param>
       <key>file</key>
-      <value>/home/foci2/Documents/SDR/QPSK/GRC/ichar.dat</value>
+      <value>/home/foci2/Documents/SDR/QPSK/GRC/tx.dat</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(672, 452)</value>
+      <value>(328, 84)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -328,14 +324,22 @@
     </param>
     <param>
       <key>id</key>
-      <value>blocks_file_sink_0_0_0_0_1_0_0</value>
+      <value>blocks_file_source_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
     </param>
     <param>
       <key>type</key>
-      <value>byte</value>
+      <value>complex</value>
     </param>
     <param>
-      <key>unbuffered</key>
+      <key>repeat</key>
       <value>False</value>
     </param>
     <param>
@@ -367,7 +371,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(472, 316)</value>
+      <value>(896, 260)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -418,7 +422,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(856, 316)</value>
+      <value>(280, 348)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -465,7 +469,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(752, 396)</value>
+      <value>(432, 452)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -508,7 +512,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(128, 312)</value>
+      <value>(896, 120)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -551,7 +555,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(416, 108)</value>
+      <value>(632, 116)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -599,6 +603,117 @@
     </param>
   </block>
   <block>
+    <key>limesdr_source</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>analog_bandw_ch0</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>calibr_bandw_ch0</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>digital_bandw_ch0</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>gain_dB_ch0</key>
+      <value>15</value>
+    </param>
+    <param>
+      <key>lna_path_ch0</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>nco_freq_ch0</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>analog_bandw_ch1</key>
+      <value>5e6</value>
+    </param>
+    <param>
+      <key>calibr_bandw_ch1</key>
+      <value>10e6</value>
+    </param>
+    <param>
+      <key>digital_bandw_ch1</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>gain_dB_ch1</key>
+      <value>30</value>
+    </param>
+    <param>
+      <key>lna_path_ch1</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>nco_freq_ch1</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>channel_mode</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>serial</key>
+      <value>1D4258AE5AC357</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>filename</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(112, 84)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>limesdr_source_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>oversample</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>rf_freq</key>
+      <value>75.25e6</value>
+    </param>
+    <param>
+      <key>samp_rate</key>
+      <value>samp_rate</value>
+    </param>
+  </block>
+  <block>
     <key>qpsk_de_randomizer</key>
     <param>
       <key>alias</key>
@@ -618,7 +733,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(520, 396)</value>
+      <value>(136, 452)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -661,7 +776,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(664, 312)</value>
+      <value>(104, 352)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -708,7 +823,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(664, 252)</value>
+      <value>(1088, 252)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -1046,6 +1161,12 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
+    <source_block_id>blocks_file_source_0</source_block_id>
+    <sink_block_id>digital_pfb_clock_sync_xxx_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>blocks_multiply_const_vxx_1</source_block_id>
     <sink_block_id>qpsk_symbol_decision_0</sink_block_id>
     <source_key>0</source_key>
@@ -1082,8 +1203,8 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>qpsk_de_randomizer_1</source_block_id>
-    <sink_block_id>blocks_file_sink_0_0_0_0_1_0_0</sink_block_id>
+    <source_block_id>limesdr_source_0</source_block_id>
+    <sink_block_id>digital_pfb_clock_sync_xxx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
