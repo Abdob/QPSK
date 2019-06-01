@@ -18,10 +18,13 @@ Bit randomization, derandomization and symbol timing recovery are added to the S
 Using the components built in simulation 2 we build transmitter 2 and receiver 2. We test the receiver with minimal carreir frequency offset and with carrier offset equal to +/-0.01% to ensure we are meeting receiver specs.
 
 As you see on the images and video link, the bottom plots are symbols before they are differentially encoded, the top symbols are after they are differentially encoded. As the carrier frequency offset increases the symbols begin to vigorously circulate. However the phase difference between succesive symbols remains about 0,90,180 or 270. The top plot illustrates the differentially decoded receivers ability to circumvent the rotating symbols resulting from the carrier offset. 
+
 Receiving with small carrier frequency offset:
+
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Y3vxdlXoFrQ/0.jpg)](https://www.youtube.com/watch?v=Y3vxdlXoFrQ)
 
 Receiving with large carrier frequency offset:
+
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/ZyHpjHddlck/0.jpg)](https://www.youtube.com/watch?v=ZyHpjHddlck&feature=youtu.be)
 
 
