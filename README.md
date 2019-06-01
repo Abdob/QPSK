@@ -14,7 +14,7 @@ Bit randomization, derandomization and symbol timing recovery are added to the S
 
 ![GitHub Logo](/Diagrams/Simulation2.jpg)
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/watch?v=ZyHpjHddlck&feature=youtu.be/0.jpg)](https://www.youtube.com/watch?v=ZyHpjHddlck&feature=youtu.be)
 
 # Receiver Gain Settings
 Using portions from Simulation1 we create Transmitter1. We use Receiver1 to capture the signal at various receiver gains. This section reveals the optimal receiver gains along with affects of transmitting unbalanced bits in non-optimal settings.
