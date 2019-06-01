@@ -105,7 +105,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>32000</value>
+      <value>1024000*8</value>
     </param>
   </block>
   <block>
