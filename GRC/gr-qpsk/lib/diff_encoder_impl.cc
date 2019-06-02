@@ -1,6 +1,6 @@
 /* -*- c++ -*- */
 /* 
- * Copyright 2019 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2019 fociSpectral.
  * 
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -71,7 +71,7 @@ namespace gr {
                        gr_vector_void_star &output_items)
     {
 	const gr_complex *in = (const gr_complex *) input_items[0];
-	const gr_complex expminj34 = {-0.707106781186547, -0.707106781186548};
+	const gr_complex expminj34 = gr_complex(-0.707106781186547, -0.7071067811865480);
         gr_complex *out = (gr_complex *) output_items[0];
         gr_complex origin = gr_complex(0,0);
 	gr_complex last_out = d_last_out;
@@ -89,8 +89,8 @@ end
  */
 		double rP = in[i].real();
 		double iP = in[i].imag();
-		double angle = atan2(iP, rP);
-		gr_complex mulAngle = {0, -1*angle};
+		float angle = (float)atan2(iP, rP);
+		gr_complex mulAngle = gr_complex(0, -1*angle);
 		out[i] = last_out*exp(mulAngle)*expminj34;
 		last_out = out[i];
         }

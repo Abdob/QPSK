@@ -1,6 +1,6 @@
 /* -*- c++ -*- */
 /* 
- * Copyright 2019 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2019 fociSpectral.
  * 
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -73,20 +73,20 @@ namespace gr {
         {
 		if((in[i].real() > 0) && (in[i].imag() > 0)){
 
-			out[i] = {1,1};
+			out[i] = gr_complex(1,1);
 
 		}
 		else if((in[i].real() > 0) && (in[i].imag() < 0)){
 
-			out[i] = {1,-1};
+			out[i] = gr_complex(1,-1);
 		}
 		else if((in[i].real() < 0) && (in[i].imag() > 0)){
-			out[i] = {-1,1};
+			out[i] = gr_complex(-1,1);
 
 		}
 
 		else{
-			out[i] = {-1,-1};
+			out[i] = gr_complex(-1,-1);
 		}
 	}
       // Tell runtime system how many input items we consumed on

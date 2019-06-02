@@ -1,6 +1,6 @@
 /* -*- c++ -*- */
 /* 
- * Copyright 2019 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2019 fociSpectral.
  * 
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -114,7 +114,7 @@ namespace gr {
 			
 			// Checking if first byte and last byte are 0x47 and 0x63 sync bytes respectively
 			for(int j = 0; j < 8; j++)
-			{
+			{ 
 				int isamp = (samp+8-j) % 4616;
 				val = val + pBuf[isamp]*pow(2,j);
 				int isamp2 = (samp+4616-j) % 4616;
@@ -132,7 +132,7 @@ namespace gr {
 			//IS SYNC BYTE ?
 			
 			if((val == 71) & (val2 ==100) & (val3 == 71) & (val4 == 100)& (counter ==0)){	 
-				printf(".");
+				printf("*");
 				counter = 0;
 				active = 1;
 				byteAlignDelay = 8 - (samp % 8);
