@@ -1,5 +1,5 @@
-rx = DataFromGRC('rx30','complex');
+rx2 = DataFromGRC('passthrough_gain','complex',30e7);
 subplot(211)
-plot(real(rx))
+plot(real(rx2))
 subplot(212)
-plot(imag(rx)) 
+plot(imag(rx2)) 
