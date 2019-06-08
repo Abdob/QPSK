@@ -40,7 +40,14 @@ The passthrough system is essentially a repeater which passes the raw signal thr
 
 ![GitHub Logo](/Diagrams/passthrough.jpg)
 
-In setting the default gain we look at the input signal to the passthrough system and find its average power to be 9.7499e-05.
+In setting the default gain we look at the input signal to the passthrough system.
 
 ![GitHub Logo](/Diagrams/passthrough_in.jpg)
 
+We then compare this to the local receiver's received signal.
+
+![GitHub Logo](/Diagrams/passthrough_nogain.jpg)
+
+We vary the gain until we match the inputs signal power.
+
+![GitHub Logo](/Diagrams/passthrough_x8gain.jpg)
