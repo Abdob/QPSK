@@ -34,3 +34,9 @@ Receiving with large carrier frequency offset:
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/ZyHpjHddlck/0.jpg)](https://www.youtube.com/watch?v=ZyHpjHddlck&feature=youtu.be)
 
+# Passthrough
+The passthrough system is essentially a repeater which passes the raw signal through the LimeSDR with minimal effect on the signal. It includes a digial gain to ensure power isn't lost when passing the signal through the system.
+
+
+![GitHub Logo](/Diagrams/passthrough.jpg)
+
