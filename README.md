@@ -47,6 +47,6 @@ We then compare this to the local receiver's received signal in the absence of a
 
 ![GitHub Logo](/Diagrams/passthrough_nogain.jpg)
 
-We vary the gain until we match the inputs signal power. Below we see the digital gain has brought back the signal's integrity which will allow the local receiver to recover the signal.
+We vary the gain until we match the inputs signal power. We arrive at a gain factor of 8. Below we see the digital gain has brought back the signal's integrity which will allow the local receiver to recover the signal.
 
 ![GitHub Logo](/Diagrams/passthrough_x8gain.jpg)
