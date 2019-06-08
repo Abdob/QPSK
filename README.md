@@ -35,19 +35,18 @@ Receiving with large carrier frequency offset:
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/ZyHpjHddlck/0.jpg)](https://www.youtube.com/watch?v=ZyHpjHddlck&feature=youtu.be)
 
 # Passthrough
-The passthrough system is essentially a repeater which passes the raw signal through the LimeSDR with minimal effect on the signal. It includes a digial gain to ensure power isn't lost when passing the signal through the system.
-
+The passthrough system is essentially a repeater which passes the raw signal through the LimeSDR with the goal of keeping minimizing any any affects on the signal. The system includes a digial gain to ensure the signal's power isn't dissipated as it passes through the system.
 
 ![GitHub Logo](/Diagrams/passthrough.jpg)
 
-In setting the default gain we look at the input signal to the passthrough system.
+In setting the default gain we look at signal arriving at the passthrough system.
 
 ![GitHub Logo](/Diagrams/passthrough_in.jpg)
 
-We then compare this to the local receiver's received signal.
+We then compare this to the local receiver's received signal in the absence of a digital gain, or digital gain equaling 1. The image below shows the signal is greatly dissipated. The signal power has dropped to near the noise level. We can see the signal-to-noise ratio has significantly dropped. 
 
 ![GitHub Logo](/Diagrams/passthrough_nogain.jpg)
 
-We vary the gain until we match the inputs signal power.
+We vary the gain until we match the inputs signal power. Below we see the digital gain has brought back the signal's integrity which will allow the local receiver to recover the signal.
 
 ![GitHub Logo](/Diagrams/passthrough_x8gain.jpg)
